@@ -14,10 +14,20 @@ config/name="Paw Ranger"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://ddgxgh0tbkp13"
+SignalHub="*uid://pav7hsunq3ad"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor]
+
+naming/scene_name_casing=1
+naming/script_name_casing=1
 
 [physics]
 

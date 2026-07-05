@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bq2tmpv66fnx3"]
+
+[ext_resource type="Texture2D" uid="uid://d2pmjon6n8lfo" path="res://Assets/Placeholder/Turtle.png" id="1_5xvcn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5g2k"]
+size = Vector2(31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f42yj"]
+atlas = ExtResource("1_5xvcn")
+region = Rect2(896, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5g2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f42yj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Client" type="RigidBody2D" unique_id=285046753]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612731033]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_v5g2k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1763218271]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_v5g2k")
