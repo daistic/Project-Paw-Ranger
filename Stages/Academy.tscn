@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://bcuccpcg1rws4"]
 
+[ext_resource type="PackedScene" uid="uid://bq2tmpv66fnx3" path="res://Entities/client.tscn" id="1_3isva"]
+[ext_resource type="Script" uid="uid://cqa26p0kbr2qn" path="res://Entities/Trigger Area/Trigger.gd" id="2_286s8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5g2k"]
+size = Vector2(73, 447)
+
 [node name="Academy" type="Node2D" unique_id=1940947890]
+
+[node name="Client" parent="." unique_id=285046753 instance=ExtResource("1_3isva")]
+position = Vector2(983, 417)
+
+[node name="Trigger Area" type="Area2D" parent="." unique_id=1551039398]
+position = Vector2(461, 411)
+script = ExtResource("2_286s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" unique_id=832668694]
+position = Vector2(-6.5, -30.5)
+shape = SubResource("RectangleShape2D_v5g2k")
+
+[connection signal="body_entered" from="Trigger Area" to="Trigger Area" method="_on_body_entered"]

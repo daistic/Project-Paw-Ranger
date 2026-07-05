@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bq2tmpv66fnx3"]
 
 [ext_resource type="Texture2D" uid="uid://d2pmjon6n8lfo" path="res://Assets/Placeholder/Turtle.png" id="1_5xvcn"]
+[ext_resource type="Script" uid="uid://be8lok7svl2kc" path="res://Entities/Client/Client.gd" id="1_f42yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5g2k"]
 size = Vector2(31, 31)
@@ -21,11 +22,15 @@ animations = [{
 }]
 
 [node name="Client" type="RigidBody2D" unique_id=285046753]
+gravity_scale = 0.0
+script = ExtResource("1_f42yj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612731033]
 position = Vector2(-0.5, -0.5)
+scale = Vector2(3.5, 3.5)
 shape = SubResource("RectangleShape2D_v5g2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1763218271]
 texture_filter = 1
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_v5g2k")
