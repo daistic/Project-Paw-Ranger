@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2pmjon6n8lfo" path="res://Assets/Placeholder/Turtle.png" id="1_5xvcn"]
 [ext_resource type="Script" uid="uid://be8lok7svl2kc" path="res://Entities/Client/Client.gd" id="1_f42yj"]
+[ext_resource type="PackedScene" uid="uid://c4hd8nkmsdfxi" path="res://Entities/DialogueBox/DialogueBox.tscn" id="3_dmvb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5g2k"]
 size = Vector2(31, 31)
@@ -34,3 +35,10 @@ shape = SubResource("RectangleShape2D_v5g2k")
 texture_filter = 1
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_v5g2k")
+
+[node name="DialogueBox" parent="." unique_id=592238675 instance=ExtResource("3_dmvb3")]
+visible = false
+offset_left = -6.0
+offset_top = -115.0
+offset_right = 5.0
+offset_bottom = -82.0

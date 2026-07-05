@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://cokb6u7wq1o2t"]
+
+[ext_resource type="Script" uid="uid://ce8dk5mo4rogr" path="res://Entities/Client/Dialogue/DialogueStruct.gd" id="1_xpivi"]
+[ext_resource type="Script" uid="uid://dsqsaf4pn8fib" path="res://Entities/Client/Dialogue/DialogueResource.gd" id="2_4tvts"]
+
+[sub_resource type="Resource" id="Resource_8lijy"]
+script = ExtResource("1_xpivi")
+line = "I Have Feverrrrrrrrr \\n rrrrrrrrrrrrrr"
+correct_diagnosis = "Rabies"
+metadata/_custom_type_script = "uid://ce8dk5mo4rogr"
+
+[resource]
+script = ExtResource("2_4tvts")
+dialogues = Array[ExtResource("1_xpivi")]([SubResource("Resource_8lijy")])
+metadata/_custom_type_script = "uid://dsqsaf4pn8fib"
