@@ -1,5 +1,4 @@
 class_name Client
-
 extends RigidBody2D
 
 @onready var dialogue_box: DialogueBox = $DialogueBox
@@ -13,7 +12,6 @@ func _ready() -> void:
 
 func set_speed(new_speed: float) -> void:
 	speed = new_speed
-	
 	if speed == 0.0:
 		linear_velocity = Vector2.ZERO
 	else:
@@ -22,3 +20,6 @@ func set_speed(new_speed: float) -> void:
 func play_dialogue() -> void:
 	dialogue_box.show()
 	dialogue_box.display_text(dialogue.line)
+
+func handle_resolution() -> void:
+	queue_free()

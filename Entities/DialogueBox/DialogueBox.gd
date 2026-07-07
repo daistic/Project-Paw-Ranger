@@ -1,5 +1,4 @@
 class_name  DialogueBox
-
 extends MarginContainer
 
 @onready var dialogue_label: RichTextLabel = $MarginContainer/DialogueLabel
@@ -13,10 +12,11 @@ var letter_index: int = 0
 var letter_time: float = 0.03
 var space_time: float = 0.06
 var punctuation_time: float = 0.2
-
-signal finished_displaying()
+var is_active: bool = false
 
 func display_text(text_to_display: String) -> void:
+	timer.stop()
+	is_active = true
 	letter_index = 0
 	
 	text = text_to_display
@@ -36,8 +36,12 @@ func display_text(text_to_display: String) -> void:
 	_display_letter()
 
 func _display_letter():
+	if not is_active:
+		return
+	
 	if letter_index >= text.length():
-		finished_displaying.emit()
+		is_active = false
+		SignalHub.emit_dialogue_finished_displaying()
 		return
 	
 	var current_char: String = text[letter_index]
@@ -51,6 +55,11 @@ func _display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
+
+func stop_dialogue() -> void:
+	is_active = false
+	timer.stop()
+	hide()
 
 func _on_timer_timeout() -> void:
 	_display_letter()

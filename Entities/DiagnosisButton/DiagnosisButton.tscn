@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b5ql8kadehiak"]
+
+[ext_resource type="Texture2D" uid="uid://c51p6cxjkamwf" path="res://Assets/white_texture.png" id="1_ruyjq"]
+[ext_resource type="Script" uid="uid://bmx0ukgmynjj4" path="res://Entities/DiagnosisButton/DiagnosisButton.gd" id="2_ruyjq"]
+[ext_resource type="LabelSettings" uid="uid://d2eff7b8h0fh1" path="res://Assets/Fonts/Cheese_24_black.tres" id="3_2s3ud"]
+
+[node name="ButtonOption" type="TextureButton" unique_id=1913249991]
+custom_minimum_size = Vector2(150, 40)
+offset_right = 156.0
+offset_bottom = 34.0
+texture_normal = ExtResource("1_ruyjq")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_ruyjq")
+metadata/_custom_type_script = "uid://c0f4y04oy22sb"
+
+[node name="Label" type="Label" parent="." unique_id=945609365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+label_settings = ExtResource("3_2s3ud")
+horizontal_alignment = 1
+vertical_alignment = 1

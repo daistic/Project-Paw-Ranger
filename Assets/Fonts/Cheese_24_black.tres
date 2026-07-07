@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://d2eff7b8h0fh1"]
+
+[ext_resource type="FontFile" uid="uid://cp6k4kw2u8tf8" path="res://Assets/Fonts/Cheese Milky.otf" id="1_ojukq"]
+
+[resource]
+font = ExtResource("1_ojukq")
+font_size = 24
+font_color = Color(0, 0, 0, 1)

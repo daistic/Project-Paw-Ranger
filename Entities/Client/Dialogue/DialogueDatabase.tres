@@ -5,7 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_8lijy"]
 script = ExtResource("1_xpivi")
-line = "I Have Feverrrrrrrrr \\n rrrrrrrrrrrrrr"
+line = "I Have Feverrrrrrrrr
+rrrrrrrrrrrrrr"
 correct_diagnosis = "Rabies"
 metadata/_custom_type_script = "uid://ce8dk5mo4rogr"
 

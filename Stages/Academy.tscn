@@ -1,22 +1,57 @@
 [gd_scene format=3 uid="uid://bcuccpcg1rws4"]
 
 [ext_resource type="PackedScene" uid="uid://bq2tmpv66fnx3" path="res://Entities/client.tscn" id="1_3isva"]
-[ext_resource type="Script" uid="uid://cqa26p0kbr2qn" path="res://Entities/Trigger Area/Trigger.gd" id="2_286s8"]
+[ext_resource type="Script" uid="uid://c774p5bfx1ytl" path="res://Stages/Academy.gd" id="1_33xlk"]
+[ext_resource type="PackedScene" uid="uid://cj8hsieme7pjn" path="res://Entities/Trigger Area/TriggerArea.tscn" id="2_286s8"]
+[ext_resource type="PackedScene" uid="uid://c5mm5uqbak8s1" path="res://Entities/UI/DiagnosisOptions.tscn" id="3_3fvad"]
+[ext_resource type="FontFile" uid="uid://cp6k4kw2u8tf8" path="res://Assets/Fonts/Cheese Milky.otf" id="5_3jar6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5g2k"]
-size = Vector2(73, 447)
+[sub_resource type="LabelSettings" id="LabelSettings_uhyj0"]
+font = ExtResource("5_3jar6")
+font_size = 32
+font_color = Color(0.8516623, 0.7767461, 0.38656777, 1)
 
 [node name="Academy" type="Node2D" unique_id=1940947890]
+script = ExtResource("1_33xlk")
 
 [node name="Client" parent="." unique_id=285046753 instance=ExtResource("1_3isva")]
 position = Vector2(983, 417)
 
-[node name="Trigger Area" type="Area2D" parent="." unique_id=1551039398]
-position = Vector2(461, 411)
-script = ExtResource("2_286s8")
+[node name="Trigger Area" parent="." unique_id=286308973 instance=ExtResource("2_286s8")]
+position = Vector2(479, 338)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" unique_id=832668694]
-position = Vector2(-6.5, -30.5)
-shape = SubResource("RectangleShape2D_v5g2k")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=363664666]
 
-[connection signal="body_entered" from="Trigger Area" to="Trigger Area" method="_on_body_entered"]
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1729892069]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI" unique_id=1324389350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 65
+
+[node name="DiagnosisOptions" parent="CanvasLayer/UI/MarginContainer" unique_id=1776415734 instance=ExtResource("3_3fvad")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI/MarginContainer" unique_id=1517363152]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_uhyj0")
+horizontal_alignment = 2
